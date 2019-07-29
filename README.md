@@ -1,2 +1,2 @@
 # CprimerPlus
-Projects and exercises from C Prmer Plus
+Projects and exercises from C Primer Plus
