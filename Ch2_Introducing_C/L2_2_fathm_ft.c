@@ -1,3 +1,5 @@
+//fathm_ft.c -- converts 2 fathoms to feet
+
 #include<stdio.h>
 int main(void)
 {
