@@ -4,7 +4,7 @@ int main(void)
 {
 	int n, n2, n3;
 	
-	// this program has severka errors
+	// this program has several errors
 	n = 5;
 	n2 = n * n;
 	n3 = n2 * n2;

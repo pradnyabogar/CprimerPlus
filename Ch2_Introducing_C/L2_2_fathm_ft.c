@@ -4,6 +4,7 @@
 int main(void)
 {
 	int feet, fathoms;
+				/*space to separate declaration and action section */
 	fathoms = 2;
 	feet = 6 * fathoms;
 	printf("There is %d feet in %d fathoms!\n", feet, fathoms);
