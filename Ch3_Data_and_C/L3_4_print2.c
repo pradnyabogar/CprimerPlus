@@ -1,4 +1,4 @@
-/*Listing 3.2 print1.c -- more printf() properties */
+/*Listing 3.4 print2.c - more printf() properties */
 
 #include<stdio.h>
 int main(void)
