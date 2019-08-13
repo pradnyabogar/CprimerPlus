@@ -1,4 +1,4 @@
-/*Exercise 3.3 sound_alert.c -- displays char for an ascii code */
+/*Exercise 3.2 sound_alert.c   */
 
 #include<stdio.h>
 int main(void)
