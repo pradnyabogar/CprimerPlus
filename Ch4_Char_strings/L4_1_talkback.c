@@ -13,7 +13,7 @@ int main()
 	printf("Hi! What's your name?\n");
 	scanf("%s", name);
 	printf("%s, What's your weight in pounds?\n", name);
-	scanf("%f", weight);
+	scanf("%f", &weight);
 	size = sizeof name;
 	letters = strlen(name);
 	volume = weight/DENSITY;
