@@ -12,7 +12,7 @@ int main(void)
 	status = scanf("%ld", &num);
 	while(status = 1)
 	{
-		sum = sum + 1;
+		sum = sum + num;
 		printf("Please enter next interger (q to quit):");
 		status = scanf("%ld", &num);
 		
