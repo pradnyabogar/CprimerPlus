@@ -4,17 +4,32 @@
 int main(void)
 {
 	int temp;
-	int max = 10; //no. of temperature input
+	int n ; //no. of temperature input
 	int lowest = 10000;
+	int highest = -273;
 	int i;
-	for (i=0; i<max; i++)
+	
+	printf("Enter no. of temperature data ");
+	scanf("%d", &n);
+	if (n>0)
 	{
-		printf("Enter temperature ");
-		scanf("%d", &temp);
-		if (abs(temp) < lowest)
+		for (i=0; i < n; i++)
 		{
-			lowest= temp;
+			//printf("Enter temperature ");
+			scanf("%d", &temp);
+			if (abs(temp) < abs(lowest))
+			{
+				lowest = temp;
+			}
+			else if (abs(temp) == abs(lowest))
+			{
+				lowest = abs(lowest);
+			}
 		}
+	}
+	else
+	{
+		lowest = 0;
 	}
 	
 	printf("The lowest temperature is %d\n", lowest);
