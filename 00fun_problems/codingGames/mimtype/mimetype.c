@@ -39,16 +39,14 @@ int main()
     /* 2D array declaration*/
     char association_table[N][2];
     for (int i = 0; i < N; i++) {
-		for (int j = 0; j < 2; j++){
-			
-			// file extension
-			char EXT[11];
-			// MIME type.
-			char MT[51];
-			scanf("%s%s", EXT, MT); fgetc(stdin);
-			association_table[i][0] = EXT;
-			association_table[i][1] = MT;
-		}
+	
+		// file extension
+		char EXT[11];
+		// MIME type.
+		char MT[51];
+		scanf("%s%s", EXT, MT); fgetc(stdin);
+		association_table[i][0] = EXT;
+		association_table[i][1] = MT;
     }
     // Write an action using printf(). DON'T FORGET THE TRAILING \n
     // To debug: fprintf(stderr, "Debug messages...\n");
@@ -58,23 +56,22 @@ int main()
         fgets(FNAME, 257, stdin);
 
 		char* suffix = getExtension(FNAME);
-		if (suffix =! 'NULL')
-		{
+		printf("suffix is %s\n", suffix);
+		if (suffix != NULL) {
 			int flag = 0;
-			for (int i = 0; i < N; i++){
-				if (suffix == association_table[i][0]){
+			for (int i = 0; i < N; i++) {
+				if (suffix == association_table[i][0]) {
 					printf("yay \n");
 					//printf("%c", association_table[i][1]);
 					flag=1;
 					break;
 				}
 			}
-			if(flag ==0){					//pavan helped
+			if(flag == 0) {					//pavan helped
 				printf("UNKNOWN\n");
 			}
 		}
-		else
-		{
+		else{
 		// For each of the Q filenames, display on a line the corresponding MIME type. If there is no corresponding type, then display UNKNOWN.
 		printf("UNKNOWN\n");
 		}
