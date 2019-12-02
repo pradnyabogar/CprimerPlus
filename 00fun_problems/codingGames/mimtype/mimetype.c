@@ -8,14 +8,16 @@
  * the standard input according to the problem statement.
  **/
  
- 
+ #define ENABLE_ALL_STEP_LOGGING (1)
  
 char* getExtension(char FNAME[]) {
   char* s = FNAME;
   int n = strlen(s);
   char* suffix = s + n;
 
-  //printf("%s\n%s\n", s, suffix);
+#if ENABLE_ALL_STEP_LOGGING
+  printf("%s\n%s\n", s, suffix);
+#endif // ENABLE_ALL_STEP_LOGGING
 
   while (0 < n && s[--n] != '.');
   if (s[n] == '.') {
