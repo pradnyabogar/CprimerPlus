@@ -33,22 +33,37 @@ int main()
 {
     // Number of elements which make up the association table.
     int N;
+    printf("Put the no. of elements added to the table \n");
     scanf("%d", &N);
+    printf("no. of elements in table is %d \n", N);
     // Number Q of file names to be analyzed.
     int Q;
-    char dot = '.'; 
+    char dot = '.';
+    printf("Enter the no. of filenames to be analysed \n");
     scanf("%d", &Q);
+    printf("no. of filenames to be analysed is %d \n", Q);
     /* 2D array declaration*/
-    char association_table[N][2];
+    char *association_table[N][2];
     for (int i = 0; i < N; i++) {
 	
 		// file extension
 		char EXT[11];
 		// MIME type.
 		char MT[51];
+    printf("Enter ext and mimetype \n");
 		scanf("%s%s", EXT, MT); fgetc(stdin);
 		association_table[i][0] = EXT;
 		association_table[i][1] = MT;
+    }
+    //This will print the table
+    printf("The table consists of \n");
+    for(int i = 0; i < N; ++i)
+    {
+      for(int j = 0; j < 2; ++j)
+      {
+        printf("%s ", association_table[i][j]);
+      }
+      printf("\n");
     }
     // Write an action using printf(). DON'T FORGET THE TRAILING \n
     // To debug: fprintf(stderr, "Debug messages...\n");
