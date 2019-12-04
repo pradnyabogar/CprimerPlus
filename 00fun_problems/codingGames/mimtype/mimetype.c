@@ -39,27 +39,28 @@ int main()
     // Number Q of file names to be analyzed.
     int Q;
     char dot = '.';
+    
     printf("Enter the no. of filenames to be analysed \n");
     scanf("%d", &Q);
     printf("no. of filenames to be analysed is %d \n", Q);
     /* 2D array declaration*/
     char *association_table[N][2];
     for (int i = 0; i < N; i++) {
-	
-		// file extension
-		char EXT[11];
-		// MIME type.
-		char MT[51];
-    printf("Enter ext and mimetype \n");
-		scanf("%s%s", EXT, MT); fgetc(stdin);
-		association_table[i][0] = EXT;
-		association_table[i][1] = MT;
+	    // file extension
+		  char EXT[11];
+		  // MIME type.
+		  char MT[51];
+      printf("Enter ext and mimetype \n");
+		  scanf("%s%s", EXT, MT); fgetc(stdin);
+		  association_table[i][0] = EXT;
+		  association_table[i][1] = MT;
+      //scanf("%s%s", &association_table[i][0], &association_table[i][1]); fgetc(stdin);
     }
     //This will print the table
     printf("The table consists of \n");
-    for(int i = 0; i < N; ++i)
+    for(int i = 0; i < N; i++)
     {
-      for(int j = 0; j < 2; ++j)
+      for(int j = 0; j < 2; j++)
       {
         printf("%s ", association_table[i][j]);
       }
@@ -68,21 +69,25 @@ int main()
     // Write an action using printf(). DON'T FORGET THE TRAILING \n
     // To debug: fprintf(stderr, "Debug messages...\n");
     for (int i = 0; i < Q; i++) {
-        // One file name per line.
-        char FNAME[257];
-        fgets(FNAME, 257, stdin);
+      // One file name per line.
+      char FNAME[257];
+      fgets(FNAME, 257, stdin);
+		  char *suffix = getExtension(FNAME);
+		  printf("suffix is %s\n", suffix);
 
-		char* suffix = getExtension(FNAME);
-		printf("suffix is %s\n", suffix);
 		if (suffix != NULL) {
 			int flag = 0;
 			for (int i = 0; i < N; i++) {
-				if (suffix == association_table[i][0]) {
+        printf("checking for value in table %s \n ", association_table[i][0]);
+				if ((strcmp(suffix, association_table[i][0]))== 0) {
 					printf("yay \n");
 					//printf("%c", association_table[i][1]);
 					flag=1;
 					break;
 				}
+        else{
+          printf("nay \n");
+        }
 			}
 			if(flag == 0) {					//pavan helped
 				printf("UNKNOWN\n");
