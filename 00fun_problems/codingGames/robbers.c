@@ -26,7 +26,11 @@ int main()
             printf("Enter no. of char and number char in password \n");
             printf("for robber %d for vault %d \n", i, j);
             scanf("%d%d", &C, &N);
-
+            scanf("%d%d", &N);
+            if (N > C)
+            {
+                printf("number characters should not be higher than characters \n");
+            }
             //total combination by permutations formula
             total_no_combo = ((2^N)*(5^C));
             if (highest < total_no_combo)
