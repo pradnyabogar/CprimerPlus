@@ -1,4 +1,4 @@
-/*Listing 7.4 electric.c -- calculate electric bill */
+/*Listing 7.4 divisors.c -- nested ifs display divisors of a number */
 
 #include<stdio.h>
 #include <stdbool.h>
