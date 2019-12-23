@@ -9,9 +9,9 @@
             "command": "/usr/bin/gcc",
             "args": [
                 "-g",
-                "/gitHub/CprimerPlus/10_arrays_pointers/some_data",
+                "~/gitHub/CprimerPlus/10_arrays_pointers/some_data.c",
                 "-o",
-                "$/gitHub/CprimerPlus/10_arrays_pointers/"
+                "~/gitHub/CprimerPlus/10_arrays_pointers/some_data"
             ],
             "options": {
                 "cwd": "/usr/bin"
