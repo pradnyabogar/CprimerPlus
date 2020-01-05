@@ -15,7 +15,7 @@ int main(void)
 
     sum_rows(junk, ROWS);
     sum_cols(junk, ROWS);
-    printf("Sum of all elemnts = %d\n", sum2s(junk, ROWS));
+    printf("Sum of all elemnts = %d\n", sum2d(junk, ROWS));
 
     return 0;
 }
@@ -30,8 +30,8 @@ void sum_rows (int ar[][COLS], int rows)
         tot = 0;
         for (c = 0; c < COLS; c++){
             tot += ar[r][c];
-            printf("row %d: sum =n%d\n", r, tot);
         }
+        printf("row %d: sum = %d\n", r, tot);
     }
 }
 
@@ -46,9 +46,8 @@ void sum_cols (int ar[][COLS], int rows)
         for (r = 0; r < rows; r++){
             tot += ar[r][c];
         }
+        printf("col %d: sum = %d\n", c, tot);
     }
-
-    return tot;
 }
 
 int sum2d (int ar[][COLS], int rows)
@@ -62,4 +61,6 @@ int sum2d (int ar[][COLS], int rows)
             tot += ar[r][c];
         }
     }
+
+    return tot;
 }
