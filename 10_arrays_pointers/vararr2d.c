@@ -17,7 +17,7 @@ int main(void)
         {12, 10, 8, 6}
     };
 
-    int morejunk[ROWS][COLS] = {
+    int morejunk[ROWS-1][COLS+2] = {
         {20, 30, 40, 50, 60, 70},
         {5, 6, 7, 8, 9, 10}
     };
@@ -46,7 +46,7 @@ int main(void)
 }
 
 //function with a VLA parameter
-int sum2d (int ar[][COLS], int rows)
+int sum2d (int rows, int cols, int ar[rows][cols])
 {
     int r;
     int c;
