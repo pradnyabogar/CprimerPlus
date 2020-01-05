@@ -23,7 +23,7 @@ int main(void)
     return 0;
 }
 
-void sum (int *ar, int n)
+int sum (const int *ar, int n)
 {
     int i;
     int total = 0;
@@ -36,7 +36,7 @@ void sum (int *ar, int n)
 }
 
 
-int sum2d (int ar[][COLS], int rows)
+int sum2d (const int ar[][COLS], int rows)
 {
     int r;
     int c;
