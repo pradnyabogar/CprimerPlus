@@ -32,32 +32,27 @@ char* getExtension(char FNAME[]) {
 int main()
 {
     // Number of elements which make up the association table.
-    int N;
-    printf("Put the no. of elements added to the table \n");
-    scanf("%d", &N);
-    printf("no. of elements in table is %d \n", N);
-    // Number Q of file names to be analyzed.
-    int Q;
+    int N = 2;
+
+    int Q = 2;
     char dot = '.';
     
     printf("Enter the no. of filenames to be analysed \n");
     scanf("%d", &Q);
     printf("no. of filenames to be analysed is %d \n", Q);
+
     /* 2D array declaration*/
-    char **association_table[N][2];
+    char association_table[N][20] = {"html text/html", "png image/png"};
     for (int i = 0; i < N; i++) {
 	    // file extension
 		  char EXT[11];
 		  // MIME type.
 		  char MT[51];
-      printf("Enter ext and mimetype \n");
-		  scanf("%s%s", EXT, MT); 
-      //fgetc(stdin);
-		  *association_table[i][0] = EXT;
-		  *association_table[i][1] = MT;
+		  association_table[i][0] = EXT;
+		  association_table[i][1] = MT;
       //scanf("%s%s", &association_table[i][0], &association_table[i][1]); fgetc(stdin);
     }
-    //This will print the table
+    /*This will print the table
     printf("The table consists of \n");
     for(int i = 0; i < N; i++)
     {
@@ -67,33 +62,34 @@ int main()
       }
       printf("\n");
     }
+    */
 
     for (int i = 0; i < Q; i++) {
       // One file name per line.
-      char FNAME[257];
-      fgets(FNAME, 257, stdin);
-		  char *suffix = getExtension(FNAME);
-		  printf("suffix is %s\n", suffix);
+        char FNAME[257];
+        fgets(FNAME, 257, stdin);
+		char *suffix = getExtension(FNAME);
+		printf("suffix is %s\n", suffix);
 
 		if (suffix != NULL) {
 			int flag = 0;
 			for (int i = 0; i < N; i++) {
-        printf("checking for value in table %d \n ", **association_table[i][0]);
-				if ((strcmp(suffix, *association_table[i][0]))== 0) {
+                printf("checking for value in table %d \n ", association_table[i][0]);
+				if ((strcmp(suffix, association_table[i][0]))== 0) {
 					printf("yay \n");
 					//printf("%c", association_table[i][1]);
 					flag = 1;
 					break;
 				}
-        else {
-          printf("nay \n");
-        }
-			}
+                else {
+                    printf("nay \n");
+                }
+	        }
 
-			if(flag == 0) {					//pavan helped
-				printf("UNKNOWN\n");
-			}
-		}
+	        if(flag == 0) {					//pavan helped
+		        printf("UNKNOWN\n");
+            }
+        }   
 		else {
 		// For each of the Q filenames, display on a line the corresponding MIME type. If there is no corresponding type, then display UNKNOWN.
 		printf("UNKNOWN\n");
