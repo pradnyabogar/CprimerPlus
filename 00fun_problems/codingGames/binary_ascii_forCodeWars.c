@@ -6,9 +6,9 @@
 #include<stdbool.h>
 #define MAX 40
 
-int main()
+char *binary_to_string(const char *binary)
 {
-    char bin_num[MAX];
+    char bin_num[] = binary;
     char ascii_char[MAX];
     int i, j;
     int max_bin_digits;
@@ -17,15 +17,16 @@ int main()
     int x = 0;
     bool isValidInput = true;
     
-    printf("Enter your binary number\n");
-    fgets(bin_num, MAX, stdin);
+    //printf("Enter your binary number\n");
+    //fgets(bin_num, MAX, stdin);
     
     //fix this part
     max_bin_digits = strlen(bin_num) - 1;
 
     if ('\0' == bin_num[x])
     {
-        printf("Your ASCII character is \" \"\n");
+        //printf("Your ASCII character is \" \"\n");
+        return "";
     }
     else
     {   
@@ -37,20 +38,10 @@ int main()
             }
             x++; 
         }
-
-        if(false == isValidInput)
-        {
-            printf("Invalid Input!\n");
-        }
-        else
-        {
-            printf("Valid Input!\n");
-        }
     }
 
     if (isValidInput)
     {
-        printf("Your binary number length is %d \n", max_bin_digits);
         if ((max_bin_digits % 8) != 0)
         {
             num_ascii_char = (max_bin_digits/8) + 1;
@@ -59,7 +50,6 @@ int main()
         {
             num_ascii_char = (max_bin_digits/8);
         }
-        printf("No. of ASCII characters is %d.\n", num_ascii_char);
 
         for (j = 1; j <= num_ascii_char; j ++)
         {
@@ -67,9 +57,8 @@ int main()
             {
                 total += bin_num[i] * pow(2,i);
             }
-            printf("ASCII character no. %d is %c\n", j, total);
-            ascii_char[j] = (char) total;
+        ascii_char[j] = (char) total;
         }
-        printf("The ascii chars are %s.\n", ascii_char);
     }
+    return ascii_char;
 }

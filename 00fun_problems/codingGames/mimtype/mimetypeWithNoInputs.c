@@ -48,8 +48,8 @@ int main()
 		  char EXT[11];
 		  // MIME type.
 		  char MT[51];
-		  association_table[i][0] = EXT;
-		  association_table[i][1] = MT;
+		  association_table[0][20] = EXT;
+		  association_table[1][20] = MT;
       //scanf("%s%s", &association_table[i][0], &association_table[i][1]); fgetc(stdin);
     }
     /*This will print the table

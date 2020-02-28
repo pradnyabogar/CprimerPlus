@@ -1,4 +1,4 @@
-//getsputs.c - using gets() and puts()
+//getsputs.c - using fgets() and puts()
 #include <stdio.h>
 #define STLEN 14
 int main()
