@@ -1,4 +1,6 @@
 //Pokemon Damage Calculator
+#include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
